@@ -56,12 +56,12 @@ class Student
   def self.all_students_in_grade_X(number)
     sql = <<-SQL
       SELECT * FROM students where grade = ?
-      ORDER BY students.id 
+      ORDER BY students.id
     SQL
 
     DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
-    end     
+    end
   end
 
   def save

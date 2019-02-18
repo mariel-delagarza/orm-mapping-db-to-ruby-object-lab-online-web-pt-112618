@@ -77,7 +77,7 @@ class Student
 
   def self.students_below_12th_grade
     sql = <<-SQL
-      SELECT * FROM students where grade < 12 
+      SELECT * FROM students where grade < 12
       ORDER BY students.id
     SQL
 
@@ -85,7 +85,7 @@ class Student
       self.new_from_db(row)
     end
   end
-  
+
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
